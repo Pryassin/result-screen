@@ -45,9 +45,9 @@ Future improvements:
 
 ## Author
 
-- GitHub - [Pryassin](https://github.com/Pryassin)
-- Frontend Mentor - Your Frontend Mentor Profile
+- GitHub - [[Pryassin](https://github.com/Pryassin)](https://github.com/Pryassin/result-screen)
+- Frontend Mentor - [Your Frontend Mentor Profile](https://www.frontendmentor.io/profile/Pryassin)
 
 ## Live Site
 
-Add your deployed URL here after publishing with GitHub Pages, Vercel, or Netlify.
+https://pryassin.github.io/result-screen/
