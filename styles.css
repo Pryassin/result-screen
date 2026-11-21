@@ -1,47 +1,65 @@
-*{
- padding: 0;
- box-sizing: border-box;
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/*colors*/
+img {
+    display: block;
+}
+
+button {
+    font: inherit;
+}
+
+/* =========================
+   COLORS
+========================= */
+
 :root {
-  /* Page */
-  --page-background: hsl(221, 100%, 96%);
+    /* Page */
+    --page-background: hsl(221, 100%, 96%);
 
-  /* Card */
-  --card-background: hsl(0, 0%, 100%);
+    /* Card */
+    --card-background: hsl(0, 0%, 100%);
 
-  /* Result Panel */
-  --result-panel-start: hsl(252, 100%, 67%);
-  --result-panel-end: hsl(241, 81%, 54%);
+    /* Result Panel */
+    --result-panel-start: hsl(252, 100%, 67%);
+    --result-panel-end: hsl(241, 81%, 54%);
 
-  /* Score Circle */
-  --score-circle-start: hsla(256, 72%, 46%, 1);
-  --score-circle-end: hsla(241, 72%, 46%, 0);
+    /* Score Circle */
+    --score-circle-start: hsla(256, 72%, 46%, 1);
+    --score-circle-end: hsla(241, 72%, 46%, 0);
 
-  /* Text */
-  --text-primary: hsl(224, 30%, 27%);
-  --text-secondary: hsl(241, 100%, 89%);
-  --text-on-dark: hsl(0, 0%, 100%);
+    /* Text */
+    --text-primary: hsl(224, 30%, 27%);
+    --text-secondary: hsl(241, 100%, 89%);
+    --text-on-dark: hsl(0, 0%, 100%);
 
-  /* Category Colors */
-  --reaction-color: hsl(0, 100%, 67%);
-  --memory-color: hsl(39, 100%, 56%);
-  --verbal-color: hsl(166, 100%, 37%);
-  --visual-color: hsl(234, 85%, 45%);
+    /* Categories */
+    --reaction-color: hsl(0, 100%, 67%);
+    --memory-color: hsl(39, 100%, 56%);
+    --verbal-color: hsl(166, 100%, 37%);
+    --visual-color: hsl(234, 85%, 45%);
 
-  /* Category Backgrounds */
-  --reaction-background: hsla(0, 100%, 67%, 0.08);
-  --memory-background: hsla(39, 100%, 56%, 0.08);
-  --verbal-background: hsla(166, 100%, 37%, 0.08);
-  --visual-background: hsla(234, 85%, 45%, 0.08);
+    /* Category Backgrounds */
+    --reaction-background: hsla(0, 100%, 67%, 0.08);
+    --memory-background: hsla(39, 100%, 56%, 0.08);
+    --verbal-background: hsla(166, 100%, 37%, 0.08);
+    --visual-background: hsla(234, 85%, 45%, 0.08);
 
-  /* Button */
-  --button-background: hsl(224, 30%, 27%);
-  --button-background-hover: hsl(241, 81%, 54%);
+    /* Button */
+    --button-background: hsl(224, 30%, 27%);
+    --button-background-hover: hsl(241, 81%, 54%);
 }
 
-/*Fonts*/
+/* =========================
+   FONTS
+========================= */
 
 @font-face {
     font-family: "Hanken Grotesk";
@@ -64,45 +82,49 @@
     font-weight: 800;
 }
 
+/* =========================
+   MOBILE
+========================= */
 
-/*Mobile design*/
 body {
-    margin: 0;
+    min-height: 100vh;
     background-color: var(--page-background);
     font-family: "Hanken Grotesk", sans-serif;
+    line-height: 1.5;
 }
 
-.card {
+.results-summary-card {
     width: 100%;
+    min-height: 100vh;
     background-color: var(--card-background);
-    height: 100vh;
 }
 
+/* =========================
+   RESULT SECTION
+========================= */
 
+.result-section {
+    height: 25rem;
 
-.result-section{
-      background: linear-gradient(
-        var(--result-panel-start),
-        var(--result-panel-end)
-    );
-    color: var(--text-secondary);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 0 0 3rem 3rem;
-    height: 25rem;
-    
-}
-.yout-result{
-    margin-bottom: 1.8rem;
+
+    background: linear-gradient(
+        var(--result-panel-start),
+        var(--result-panel-end)
+    );
+
     color: var(--text-secondary);
+
+    border-radius: 0 0 2rem 2rem;
+
+    padding: 1.5rem;
 }
-p{
-    text-align: center;
-    padding: 0rem 3.2rem ; 
-    font-size: 1.24rem;
-    margin-top: 0.5rem;
-    
+
+.result-title {
+    color: var(--text-secondary);
+    margin-bottom: 1.8rem;
 }
 
 .score-circle {
@@ -121,24 +143,47 @@ p{
         var(--score-circle-end)
     );
 }
-.score-number{
+
+.score-number {
+    color: var(--text-on-dark);
+
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1;
-    color: var(--text-on-dark);
 }
-.summary {
+
+.score-total {
+    color: var(--text-secondary);
+}
+
+.result-rating {
+    color: var(--text-on-dark);
+    margin-top: 1.5rem;
+}
+
+.result-description {
+    text-align: center;
+
+    color: var(--text-secondary);
+
+    margin-top: 0.5rem;
+    padding-inline: 2rem;
+}
+
+/* =========================
+   SUMMARY SECTION
+========================= */
+
+.summary-section {
     padding: 1.5rem;
 }
 
-h2{
-    color: var(--text-on-dark);
-    margin-bottom: 0;
+.summary-title {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
 }
 
 .summary-list {
-    padding: 0;
-    margin: 0;
     list-style: none;
 
     display: flex;
@@ -161,11 +206,71 @@ h2{
     align-items: center;
     gap: 0.75rem;
 }
+
 .summary-score {
-    margin: 0;
     font-weight: 700;
 }
 
-.summary-score-total {
+.summary-score-value {
+    color: var(--text-primary);
+}
+
+.summary-score-max {
+    color: var(--text-primary);
     opacity: 0.5;
 }
+
+/* =========================
+   CATEGORY COLORS
+========================= */
+
+.summary-item--reaction {
+    background-color: var(--reaction-background);
+    color: var(--reaction-color);
+}
+
+.summary-item--memory {
+    background-color: var(--memory-background);
+    color: var(--memory-color);
+}
+
+.summary-item--verbal {
+    background-color: var(--verbal-background);
+    color: var(--verbal-color);
+}
+
+.summary-item--visual {
+    background-color: var(--visual-background);
+    color: var(--visual-color);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.continue-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 999px;
+
+    padding: 1rem;
+
+    margin-top: 1.5rem;
+
+    background-color: var(--button-background);
+
+    color: var(--text-on-dark);
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.continue-button:hover {
+    background-color: var(--button-background-hover);
+}
+
+
